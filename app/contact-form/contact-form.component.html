@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2>Contact Form</h2>
+    </div>
+
+    <form *ngIf="!submitted" (ngSubmit)="onSubmit()">
+        <!--NAME-->
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input  type="text" class="form-control" 
+                    id="name" name="name"
+                    required
+                    [(ngModel)]="model.name"
+                    >
+            <div class="alert alert-danger">Name field is required</div>
+        </div>
+
+        <!--SURNAME-->
+        <div class="form-group">
+            <label for="surname">Surname: </label>
+            <input type="text" class="form-control"
+                id="surname"
+                name="surname"
+                [(ngModel)]="model.surname"
+            >
+        </div>
+
+        <!--TEL1-->
+        <div class="form-group">
+            <label for="tel1">Surname: </label>
+            <input type="text" class="form-control"
+                id="tel1"
+                name="tel1"
+                [(ngModel)]="model.tel1"
+            >
+        </div>
+
+
+        <!--BUTTONS-->
+        <input type="submit" class="btn btn-primary" value="Submit">
+        <input type="button" class="btn btn-default" value=" New " (click)="newModel()">
+    </form>
+
+    
+    <!--SUBMITTED-->
+    <div *ngIf="submitted">
+        submitted
+        <input type="button" class="btn btn-default" value="Back" (click)="back()">
+    </div>
+</div>
+
+
+
